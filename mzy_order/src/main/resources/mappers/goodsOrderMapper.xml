@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.order.dao.mapper.GoodsOrderMapper">
+    <resultMap id="result" type="com.example.order.dao.entity.GoodsOrderEntity">
+        <id property="id" jdbcType="BIGINT" column="id"/>
+        <result property="orderCode" column="order_code" jdbcType="VARCHAR"/>
+        <result property="goodsType" column="goods_type" jdbcType="TINYINT"/>
+        <result property="orderTime" column="order_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+
+    <sql id="order">
+        id, order_code, order_time,goods_type
+    </sql>
+
+    <insert id="insertEntity" keyColumn="id" useGeneratedKeys="true" parameterType="com.example.order.dao.entity.GoodsOrderEntity">
+       insert INTO goods_order(goods_type, order_code, order_time) value (#{goodsType},#{orderCode},#{orderTime})
+    </insert>
+
+</mapper>

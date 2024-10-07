@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.order.demos.web;
+package com.example.order.web;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
